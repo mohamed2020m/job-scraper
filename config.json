@@ -1,0 +1,50 @@
+{
+  "server": {
+    "port": 8080,
+    "read_timeout": 10000000000,
+    "write_timeout": 10000000000,
+    "idle_timeout": 60000000000
+  },
+  "database": {
+    "supabase_url": "",
+    "supabase_key": ""
+  },
+  "scraper": {
+    "concurrent_sources": 5,
+    "batch_size": 50,
+    "retry_attempts": 3,
+    "retry_delay": 2000000000,
+    "scraping_interval": 900000000000,
+    "request_timeout": 30000000000,
+    "enable_dedup": true
+  },
+  "sources": {
+    "remoteok": {
+      "enabled": true,
+      "rate_limit": 60,
+      "search_terms": ["golang", "go", "backend", "api", "microservices"],
+      "locations": ["remote", "worldwide"],
+      "job_types": ["full-time", "contract"]
+    },
+    "remotive": {
+      "enabled": true,
+      "rate_limit": 100,
+      "search_terms": ["software-dev", "devops", "data"],
+      "locations": ["remote"],
+      "job_types": ["full_time", "contract"]
+    },
+    "wework_remotely": {
+      "enabled": false,
+      "rate_limit": 30,
+      "search_terms": ["backend", "go", "api"],
+      "locations": ["remote"],
+      "job_types": ["full-time"]
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_interval": 60000000000,
+    "log_level": "info",
+    "log_file": "logs/scraper.log"
+  }
+}
